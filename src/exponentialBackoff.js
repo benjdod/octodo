@@ -16,7 +16,6 @@ const defaultExponentialBackoffOptions = {
 const exponentialBackoffDelay = (retryOptions = defaultExponentialBackoffOptions) => {
     const { intervalMs, exponent } = { ...defaultExponentialBackoffOptions, ...retryOptions }
     return retryCount => intervalMs * Math.pow(exponent, retryCount)
-    
 }
 
 /**

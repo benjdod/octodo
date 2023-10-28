@@ -7,6 +7,14 @@ const defaultRateLimitingOptions = {
     maxRequests: 3
 }
 
+/**
+ * @description creates a simple HTTP server that responds to every request with a constant phrase
+ * and rate-limits callers.
+ * @param {number} port - port to open the server on the host machine
+ * @param {number} rateLimitingOptions.windowSizeMs - Rate limiting window size in milliseconds
+ * @param {number} rateLimitingOptions.maxRequests - maximum allowed requests in the rate limiting window
+ * @returns {{ start: () => Promise<undefined>, stop: () => Promise<undefined> }}
+ */
 exports.server = (port = PORT, rateLimitingOptions = defaultRateLimitingOptions) => {
     const { windowSizeMs, maxRequests } = { ...defaultRateLimitingOptions, ...rateLimitingOptions }
     const requestLimiter = new RequestLimiter(windowSizeMs, maxRequests)
