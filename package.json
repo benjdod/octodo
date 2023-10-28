@@ -1,0 +1,17 @@
+{
+  "name": "altr_technical_challenge_http",
+  "version": "1.0.0",
+  "description": "The DATA & Platform Technical Challenge (HTTP)",
+  "main": "",
+  "scripts": {
+    "test": "jest --maxConcurrency=1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
